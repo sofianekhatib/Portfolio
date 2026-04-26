@@ -186,10 +186,6 @@
             transition: transform 0.3s ease;
         }
 
-        #chatbot-toggle.active i {
-            transform: rotate(90deg);
-        }
-
         /* Pulse animation for chatbot icon */
         #chatbot-pulse {
             position: absolute;
@@ -218,202 +214,8 @@
             }
         }
 
-        /* Chat window */
-        #chatbot-window {
-            position: absolute;
-            bottom: 72px;
-            right: 0;
-            width: 340px;
-            height: 420px;
-            background: #1a2332;
-            border: 1px solid #2d3a4a;
-            border-radius: 16px;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-            transform: scale(0);
-            transform-origin: bottom right;
-            opacity: 0;
-            pointer-events: none;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        #chatbot-window.open {
-            transform: scale(1);
-            opacity: 1;
-            pointer-events: all;
-        }
-
-        #chatbot-header {
-            background: #1e293b;
-            padding: 14px 16px;
-            border-bottom: 1px solid #2d3a4a;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        #chatbot-header .bot-avatar {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            background: #3b82f6;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 16px;
-            color: #fff;
-        }
-
-        #chatbot-header .bot-info h4 {
-            font-size: 14px;
-            font-weight: 600;
-            color: #e2e8f0;
-            margin: 0;
-        }
-
-        #chatbot-header .bot-info span {
-            font-size: 11px;
-            color: #22c55e;
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-
-        #chatbot-header .bot-info span::before {
-            content: '';
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: #22c55e;
-            display: inline-block;
-        }
-
-        #chatbot-messages {
-            flex: 1;
-            padding: 14px;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            font-size: 13px;
-        }
-
-        .msg-bot {
-            background: #1e293b;
-            padding: 10px 14px;
-            border-radius: 16px 16px 16px 4px;
-            align-self: flex-start;
-            max-width: 85%;
-            color: #cbd5e1;
-            line-height: 1.5;
-        }
-
-        .msg-user {
-            background: #3b82f6;
-            padding: 10px 14px;
-            border-radius: 16px 16px 4px 16px;
-            align-self: flex-end;
-            max-width: 80%;
-            color: #fff;
-            line-height: 1.5;
-        }
-
-        #chatbot-input-area {
-            padding: 10px 14px;
-            border-top: 1px solid #2d3a4a;
-            display: flex;
-            gap: 8px;
-        }
-
-        #chatbot-input-area input {
-            flex: 1;
-            background: #0f172a;
-            border: 1px solid #2d3a4a;
-            border-radius: 20px;
-            padding: 10px 16px;
-            color: #e2e8f0;
-            font-size: 13px;
-            outline: none;
-            transition: border-color 0.3s;
-        }
-
-        #chatbot-input-area input:focus {
-            border-color: #3b82f6;
-        }
-
-        #chatbot-input-area button {
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            background: #3b82f6;
-            border: none;
-            cursor: pointer;
-            color: #fff;
-            font-size: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background 0.3s;
-            flex-shrink: 0;
-        }
-
-        #chatbot-input-area button:hover {
-            background: #2563eb;
-        }
-
-        /* Typing dots */
-        .typing-dots {
-            display: flex;
-            gap: 4px;
-            align-items: center;
-            padding: 4px 0;
-        }
-
-        .typing-dots span {
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: #94a3b8;
-            animation: typingBounce 1.4s infinite ease-in-out both;
-        }
-
-        .typing-dots span:nth-child(1) {
-            animation-delay: -0.32s;
-        }
-
-        .typing-dots span:nth-child(2) {
-            animation-delay: -0.16s;
-        }
-
-        .typing-dots span:nth-child(3) {
-            animation-delay: 0s;
-        }
-
-        @keyframes typingBounce {
-
-            0%,
-            80%,
-            100% {
-                transform: scale(0.6);
-                opacity: 0.4;
-            }
-
-            40% {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
-
         /* Responsive */
         @media (max-width: 480px) {
-            #chatbot-window {
-                width: 300px;
-                height: 380px;
-                right: -10px;
-            }
-
             #chatbot-container {
                 bottom: 16px;
                 right: 16px;
@@ -429,9 +231,11 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <!-- Logo -->
-                <a href="#hero" class="text-lg font-bold tracking-tight">
+                <a href="#hero" class="flex items-center gap-2 text-lg font-bold tracking-tight">
+                    <img src="./Images/SK (2).png" alt="Sofiane Khatib"
+                        class="w-8 h-8 rounded-full object-cover border border-dark-border" />
                     <span class="text-white">Sofiane</span>
-                    <span class="text-accent">.</span>
+                    <span class="text-white">Khatib</span>
                 </a>
 
                 <!-- Nav Links -->
@@ -550,17 +354,6 @@
                         compétences
                         techniques et contribuer à des projets concrets au sein d'une équipe dynamique.
                     </p>
-                    <div class="flex flex-wrap gap-3">
-                        <span
-                            class="px-3 py-1 bg-dark-card border border-dark-border rounded-full text-xs text-dark-text">🎯
-                            Disponible juillet 2026</span>
-                        <span
-                            class="px-3 py-1 bg-dark-card border border-dark-border rounded-full text-xs text-dark-text">📍
-                            Béni Mellal, Maroc</span>
-                        <span
-                            class="px-3 py-1 bg-dark-card border border-dark-border rounded-full text-xs text-dark-text">🌍
-                            Mobile</span>
-                    </div>
                 </div>
 
                 <!-- Info card -->
@@ -600,7 +393,7 @@
                                 class="w-10 h-10 rounded-full bg-dark border border-dark-border flex items-center justify-center text-accent"><i
                                     class="fa-solid fa-language"></i></span>
                             <span class="text-dark-text-secondary">
-                                Arabe <span class="text-white">(natif)</span> • Français <span
+                                • Arabe <span class="text-white">(natif)</span> • Français <span
                                     class="text-white">(intermédiaire)</span> • Anglais <span
                                     class="text-white">(intermédiaire)</span>
                             </span>
@@ -662,9 +455,7 @@
                         <span
                             class="px-3 py-1.5 bg-dark border border-dark-border rounded-lg text-xs text-dark-text font-mono">MySQL</span>
                         <span
-                            class="px-3 py-1.5 bg-dark border border-dark-border rounded-lg text-xs text-dark-text font-mono">SQL</span>
-                        <span
-                            class="px-3 py-1.5 bg-dark border border-dark-border rounded-lg text-xs text-dark-text font-mono">JSON</span>
+                            class="px-3 py-1.5 bg-dark border border-dark-border rounded-lg text-xs text-dark-text font-mono">SQLServer</span>
                     </div>
                 </div>
 
@@ -714,7 +505,8 @@
                             class="px-3 py-1.5 bg-dark border border-dark-border rounded-lg text-xs text-dark-text">Réseaux
                             (OSI, TCP/IP)</span>
                         <span
-                            class="px-3 py-1.5 bg-dark border border-dark-border rounded-lg text-xs text-dark-text">MVC</span>
+                            class="px-3 py-1.5 bg-dark border border-dark-border rounded-lg text-xs text-dark-text">Clean
+                            Architecture</span>
                     </div>
                 </div>
             </div>
@@ -766,13 +558,22 @@
             </div>
 
             <!-- Certificate badge -->
-            <div class="mt-10 text-center">
+            <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+                <!-- Certification badge -->
                 <div
                     class="inline-flex items-center gap-3 bg-dark-card border border-dark-border rounded-full px-6 py-3">
                     <span class="text-accent text-xl"><i class="fa-solid fa-certificate"></i></span>
-                    <span class="text-dark-text text-sm">Certification : <strong class="text-white">Data Analysis with
-                            Python</strong> – Udemy (2026)</span>
+                    <span class="text-dark-text text-sm">
+                        Certification : <strong class="text-white">Data Analysis with Python</strong> – Udemy (2026)
+                    </span>
                 </div>
+
+                <!-- GitHub link badge -->
+                <a href="https://github.com/SofianeKhatib" target="_blank" rel="noopener noreferrer"
+                    class="inline-flex items-center gap-2 px-6 py-4 rounded-full bg-dark-card border border-dark-border text-sm text-dark-text hover:border-accent hover:text-white transition-all duration-300">
+                    <i class="fas fa-eye"></i>
+                    <span>Voir Certification</span>
+                </a>
             </div>
         </div>
     </section>
@@ -788,7 +589,8 @@
 
             <div class="grid md:grid-cols-2 gap-8">
                 <!-- Project 1 -->
-                <div class="bg-dark-card border border-dark-border rounded-2xl overflow-hidden card-hover group">
+                <div
+                    class="bg-dark-card border border-dark-border rounded-2xl overflow-hidden card-hover group flex flex-col">
                     <div
                         class="h-48 bg-gradient-to-br from-blue-900/60 to-purple-900/40 flex items-center justify-center relative overflow-hidden">
                         <div class="text-center z-10">
@@ -797,55 +599,72 @@
                         </div>
                         <div class="absolute inset-0 bg-accent/5 group-hover:bg-accent/10 transition-colors"></div>
                     </div>
-                    <div class="p-6">
-                        <h4 class="text-white font-semibold text-lg">Application de Gestion de Bibliothèque</h4>
-                        <div class="flex flex-wrap gap-2 mt-3 mb-4">
-                            <span
-                                class="px-2 py-1 bg-dark border border-dark-border rounded text-xs text-accent font-mono">React.js</span>
-                            <span
-                                class="px-2 py-1 bg-dark border border-dark-border rounded text-xs text-accent font-mono">Tailwind
-                                CSS</span>
-                            <span
-                                class="px-2 py-1 bg-dark border border-dark-border rounded text-xs text-accent font-mono">PHP</span>
+                    <div class="p-6 flex flex-col flex-1">
+                        <div class="flex-1">
+                            <h4 class="text-white font-semibold text-lg">Application de Gestion de Bibliothèque</h4>
+                            <div class="flex flex-wrap gap-2 mt-3 mb-4">
+                                <span
+                                    class="px-2 py-1 bg-dark border border-dark-border rounded text-xs text-accent font-mono">React.js</span>
+                                <span
+                                    class="px-2 py-1 bg-dark border border-dark-border rounded text-xs text-accent font-mono">Tailwind
+                                    CSS</span>
+                                <span
+                                    class="px-2 py-1 bg-dark border border-dark-border rounded text-xs text-accent font-mono">PHP</span>
+                            </div>
+                            <p class="text-dark-text-secondary text-sm leading-relaxed">
+                                Application web responsive intégrant la <strong class="text-white">recherche</strong>,
+                                le
+                                <strong class="text-white">filtrage</strong>,
+                                l'ajout/suppression de livres, l'inscription en ligne et la gestion complète du
+                                catalogue.
+                            </p>
                         </div>
-                        <p class="text-dark-text-secondary text-sm leading-relaxed">
-                            Application web responsive intégrant la <strong class="text-white">recherche</strong>, le
-                            <strong class="text-white">filtrage</strong>,
-                            l'ajout/suppression de livres, l'inscription en ligne et la gestion complète du catalogue.
-                        </p>
+                        <a href="https://github.com/sofianekhatib/AcademIQ" target="_blank" rel="noopener noreferrer"
+                            class="mt-6 w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-dark-card border border-dark-border text-sm text-dark-text hover:border-accent hover:text-white hover:bg-accent/10 transition-all duration-300 shadow-sm">
+                            <i class="fa-brands fa-github text-accent"></i>
+                            <span>Consulter sur GitHub</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs text-dark-text-secondary"></i>
+                        </a>
                     </div>
                 </div>
 
                 <!-- Project 2 -->
-                <div class="bg-dark-card border border-dark-border rounded-2xl overflow-hidden card-hover group">
+                <div
+                    class="bg-dark-card border border-dark-border rounded-2xl overflow-hidden card-hover group flex flex-col">
                     <div
                         class="h-48 bg-gradient-to-br from-emerald-900/60 to-teal-900/40 flex items-center justify-center relative overflow-hidden">
                         <div class="text-center z-10">
-                            <i class="fa-solid fa-dumbbell text-5xl text-accent/80 mb-2"></i>
-                            <p class="text-dark-text-secondary text-xs">Application Desktop</p>
+                            <i class="fa-solid fa-hotel text-5xl text-accent/80 mb-2"></i>
+                            <p class="text-dark-text-secondary text-xs">Application Web</p>
                         </div>
                         <div class="absolute inset-0 bg-accent/5 group-hover:bg-accent/10 transition-colors"></div>
                     </div>
-                    <div class="p-6">
-                        <h4 class="text-white font-semibold text-lg">Gym Management System</h4>
-                        <div class="flex flex-wrap gap-2 mt-3 mb-4">
-                            <span
-                                class="px-2 py-1 bg-dark border border-dark-border rounded text-xs text-accent font-mono">Python</span>
-                            <span
-                                class="px-2 py-1 bg-dark border border-dark-border rounded text-xs text-accent font-mono">Tkinter</span>
-                            <span
-                                class="px-2 py-1 bg-dark border border-dark-border rounded text-xs text-accent font-mono">POO</span>
-                            <span
-                                class="px-2 py-1 bg-dark border border-dark-border rounded text-xs text-accent font-mono">MVC</span>
-                            <span
-                                class="px-2 py-1 bg-dark border border-dark-border rounded text-xs text-accent font-mono">JSON</span>
+                    <div class="p-6 flex flex-col flex-1">
+                        <div class="flex-1">
+                            <h4 class="text-white font-semibold text-lg">SRH - Système de gestion des réservations
+                                hôtelières</h4>
+                            <div class="flex flex-wrap gap-2 mt-3 mb-4">
+                                <span
+                                    class="px-2 py-1 bg-dark border border-dark-border rounded text-xs text-accent font-mono">React.js</span>
+                                <span
+                                    class="px-2 py-1 bg-dark border border-dark-border rounded text-xs text-accent font-mono">Tailwind.css</span>
+                                <span
+                                    class="px-2 py-1 bg-dark border border-dark-border rounded text-xs text-accent font-mono">ASP.NET
+                                    Core</span>
+                            </div>
+                            <p class="text-dark-text-secondary text-sm leading-relaxed">
+                                Développement d’une application complète (API REST) pour gérer clients, chambres,
+                                réservations et facturation, en appliquant la <strong class="text-white">Clean
+                                    Architecture</strong> et les principes SOLID (JWT Authentication).
+                            </p>
                         </div>
-                        <p class="text-dark-text-secondary text-sm leading-relaxed">
-                            Application desktop de gestion de salle de sport utilisant l'<strong
-                                class="text-white">architecture MVC</strong>,
-                            la <strong class="text-white">POO</strong>, la validation des données et la gestion de
-                            fichiers JSON.
-                        </p>
+                        <a href="https://github.com/sofianekhatib/Mini-project-SGRH-" target="_blank"
+                            rel="noopener noreferrer"
+                            class="mt-6 w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-dark-card border border-dark-border text-sm text-dark-text hover:border-accent hover:text-white hover:bg-accent/10 transition-all duration-300 shadow-sm">
+                            <i class="fa-brands fa-github text-accent"></i>
+                            <span>Consulter sur GitHub</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs text-dark-text-secondary"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -863,7 +682,7 @@
                 Je suis disponible et prêt à contribuer à vos projets.
             </p>
 
-            <div class="grid sm:grid-cols-3 gap-6 mb-10">
+            <div class="grid sm:grid-cols-4 gap-6 mb-10">
                 <a href="mailto:soufianekhatib652@gmail.com"
                     class="bg-dark-card border border-dark-border rounded-2xl p-6 card-hover flex flex-col items-center gap-3 group cursor-pointer">
                     <span
@@ -884,7 +703,7 @@
                     <span class="text-dark-text-secondary text-xs">+212 772817824</span>
                 </a>
 
-                <a href="#"
+                <a href="https://www.linkedin.com/in/sofiane-khatib-5b775332b" target="_blank" rel="noopener noreferrer"
                     class="bg-dark-card border border-dark-border rounded-2xl p-6 card-hover flex flex-col items-center gap-3 group cursor-pointer">
                     <span
                         class="w-12 h-12 rounded-full bg-dark border border-dark-border flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white transition-all text-xl">
@@ -892,6 +711,15 @@
                     </span>
                     <span class="text-white font-medium text-sm">LinkedIn</span>
                     <span class="text-dark-text-secondary text-xs">/sofiane-khatib</span>
+                </a>
+                <a href="https://github.com/sofianekhatib" target="_blank" rel="noopener noreferrer"
+                    class="bg-dark-card border border-dark-border rounded-2xl p-6 card-hover flex flex-col items-center gap-3 group cursor-pointer">
+                    <span
+                        class="w-12 h-12 rounded-full bg-dark border border-dark-border flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white transition-all text-xl">
+                        <i class="fa-brands fa-github"></i>
+                    </span>
+                    <span class="text-white font-medium text-sm">GitHub</span>
+                    <span class="text-dark-text-secondary text-xs">/SofianeKhatib</span>
                 </a>
             </div>
 
@@ -934,53 +762,16 @@
         </div>
     </footer>
 
-    <!-- ==================== CHATBOT BAR (Floating Icon) ==================== -->
+    <!-- ==================== CHATBOT BUTTON ==================== -->
     <div id="chatbot-container">
-        <!-- Chat Window -->
-        <div id="chatbot-window">
-            <!-- Header -->
-            <div id="chatbot-header">
-                <div class="bot-avatar">
-                    <i class="fa-solid fa-robot"></i>
-                </div>
-                <div class="bot-info">
-                    <h4>Assistant Portfolio</h4>
-                    <span>En ligne</span>
-                </div>
-            </div>
-
-            <!-- Messages -->
-            <div id="chatbot-messages">
-                <div class="msg-bot">
-                    Bonjour ! 👋 Je suis l'assistant virtuel de <strong>Sofiane Khatib</strong>. Comment puis-je vous
-                    aider ?
-                    <br><br>
-                    <span style="font-size:11px;color:#94a3b8;">Vous pouvez me demander :</span>
-                    <br>• Ses compétences
-                    <br>• Ses projets
-                    <br>• Sa formation
-                    <br>• Ses coordonnées
-                </div>
-            </div>
-
-            <!-- Input -->
-            <div id="chatbot-input-area">
-                <input type="text" id="chatbot-input" placeholder="Écrivez votre message..." autocomplete="off">
-                <button id="chatbot-send-btn">
-                    <i class="fa-solid fa-paper-plane"></i>
-                </button>
-            </div>
-        </div>
-
-        <!-- Toggle Button -->
-        <button id="chatbot-toggle" aria-label="Ouvrir le chatbot">
+        <button id="chatbot-toggle" aria-label="Ouvrir le chatbot" title="Chat with me">
             <div id="chatbot-pulse"></div>
             <i class="fa-solid fa-comment-dots"></i>
         </button>
     </div>
 
     <!-- ==================== JAVASCRIPT ==================== -->
-    <script src="javaScript.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

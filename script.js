@@ -7,11 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     const navbar = document.getElementById('navbar');
-    const chatbotToggle = document.getElementById('chatbot-toggle');
-    const chatbotWindow = document.getElementById('chatbot-window');
-    const chatbotMessages = document.getElementById('chatbot-messages');
-    const chatbotInput = document.getElementById('chatbot-input');
-    const chatbotSendBtn = document.getElementById('chatbot-send-btn');
     const contactForm = document.getElementById('contact-form');
 
     // ---------- MOBILE MENU TOGGLE ----------
@@ -54,126 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
             navbar.classList.remove('bg-dark/95', 'shadow-lg');
         }
     });
-
-    // ---------- CHATBOT TOGGLE ----------
-    if (chatbotToggle && chatbotWindow) {
-        chatbotToggle.addEventListener('click', () => {
-            const isOpen = chatbotWindow.classList.toggle('open');
-            chatbotToggle.classList.toggle('active', isOpen);
-            // Change icon if needed (keep comment icon, but we can indicate state)
-            if (isOpen) {
-                chatbotInput.focus();
-            }
-        });
-
-        // Close chatbot when clicking outside (optional, but good UX)
-        document.addEventListener('click', (e) => {
-            if (!chatbotToggle.contains(e.target) && !chatbotWindow.contains(e.target)) {
-                chatbotWindow.classList.remove('open');
-                chatbotToggle.classList.remove('active');
-            }
-        });
-    }
-
-    // ---------- CHATBOT MESSAGE HANDLING ----------
-    function addMessage(text, isUser = false) {
-        const msgDiv = document.createElement('div');
-        msgDiv.className = isUser ? 'msg-user' : 'msg-bot';
-        msgDiv.textContent = text;
-        chatbotMessages.appendChild(msgDiv);
-        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
-    }
-
-    // Simulate typing indicator
-    function showTypingIndicator() {
-        const typingDiv = document.createElement('div');
-        typingDiv.className = 'msg-bot';
-        typingDiv.innerHTML = '<div class="typing-dots"><span></span><span></span><span></span></div>';
-        typingDiv.id = 'typing-indicator';
-        chatbotMessages.appendChild(typingDiv);
-        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
-    }
-
-    function removeTypingIndicator() {
-        const indicator = document.getElementById('typing-indicator');
-        if (indicator) indicator.remove();
-    }
-
-    // Bot response logic based on keywords
-    function getBotResponse(userMessage) {
-        const msg = userMessage.toLowerCase().trim();
-
-        // Greetings
-        if (msg.includes('bonjour') || msg.includes('salut') || msg.includes('hello') || msg.includes('hi')) {
-            return "Bonjour ! 😊 Je suis là pour vous parler du profil de Sofiane Khatib. Que souhaitez-vous savoir ? (compétences, projets, formation, contact)";
-        }
-
-        // Skills
-        if (msg.includes('compétence') || msg.includes('langage') || msg.includes('technologie') || msg.includes('stack') || msg.includes('sais-tu faire')) {
-            return "Sofiane maîtrise plusieurs langages et outils :\n\n🔹 Langages : C, Python, JavaScript, PHP\n🔹 Web : HTML, CSS, React.js, Tailwind\n🔹 Bases de données : MySQL, SQL\n🔹 Analyse : Pandas\n🔹 Outils : Git, GitHub, VS Code, Cisco Packet Tracer\n🔹 Concepts : POO, structures de données, algorithmes, réseaux (OSI, TCP/IP), architecture MVC";
-        }
-
-        // Projects
-        if (msg.includes('projet') || msg.includes('réalisation') || msg.includes('portfolio') || msg.includes('application')) {
-            return "Sofiane a réalisé deux projets notables :\n\n📚 **Gestion de Bibliothèque** : Application web responsive (React.js, Tailwind, PHP) avec recherche, filtrage et inscription en ligne.\n\n🏋️ **Gym Management System** : Application desktop en Python/Tkinter, architecture MVC, POO et gestion de fichiers JSON.";
-        }
-
-        // Education
-        if (msg.includes('formation') || msg.includes('étude') || msg.includes('diplôme') || msg.includes('bac') || msg.includes('ingénieur')) {
-            return "Parcours académique de Sofiane :\n\n🎓 2025-Présent : Cycle Ingénieur en Génie Logiciel et IA (FST Errachidia)\n📘 2022-2025 : DEUST (FST Béni Mellal)\n📐 2021-2022 : Bac Sciences Physiques et Chimie (Option Français)\n\nIl possède également une certification Udemy en Data Analysis with Python (2026).";
-        }
-
-        // Contact / Stage
-        if (msg.includes('contact') || msg.includes('email') || msg.includes('téléphone') || msg.includes('phone') || msg.includes('joindre') || msg.includes('stage') || msg.includes('disponible')) {
-            return "Voici comment contacter Sofiane :\n\n📧 Email : soufianekhatib652@gmail.com\n📞 Téléphone : +212 772817824\n🔗 LinkedIn : /sofiane-khatib\n📍 Localisation : Béni Mellal, Maroc\n\nIl recherche un stage d'initiation pour **juillet 2026** !";
-        }
-
-        // Languages
-        if (msg.includes('langue') || msg.includes('parle') || msg.includes('arabe') || msg.includes('français') || msg.includes('anglais')) {
-            return "Sofiane parle trois langues :\n- Arabe (natif)\n- Français (intermédiaire)\n- Anglais (intermédiaire)";
-        }
-
-        // Help / default
-        if (msg.includes('aide') || msg.includes('help') || msg.includes('?')) {
-            return "Je peux vous renseigner sur :\n• Les compétences techniques\n• Les projets réalisés\n• La formation et les diplômes\n• Les coordonnées et le stage\nTapez simplement un mot-clé !";
-        }
-
-        // Fallback
-        return "Je n'ai pas bien compris. Essayez de me demander : compétences, projets, formation, contact, ou langues. Tapez 'aide' pour plus d'infos.";
-    }
-
-    function sendUserMessage() {
-        const message = chatbotInput.value.trim();
-        if (!message) return;
-
-        addMessage(message, true);
-        chatbotInput.value = '';
-
-        // Show typing indicator
-        showTypingIndicator();
-
-        // Simulate delay and respond
-        setTimeout(() => {
-            removeTypingIndicator();
-            const botReply = getBotResponse(message);
-            addMessage(botReply, false);
-        }, 800 + Math.random() * 600); // 0.8-1.4s delay
-    }
-
-    // Send button click
-    if (chatbotSendBtn) {
-        chatbotSendBtn.addEventListener('click', sendUserMessage);
-    }
-
-    // Enter key press
-    if (chatbotInput) {
-        chatbotInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                sendUserMessage();
-            }
-        });
-    }
 
     // ---------- CONTACT FORM SUBMISSION ----------
     if (contactForm) {
