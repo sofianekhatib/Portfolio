@@ -1,0 +1,233 @@
+{
+    "metadata": {
+        "name": "Sofiane Khatib",
+        "role": "Élève Ingénieur en Génie Logiciel & IA",
+        "version": "1.0",
+        "language": "fr"
+    },
+    "personal_info": {
+        "location": "Béni Mellal, Maroc",
+        "ville": "Béni Mellal",
+        "pays": "Maroc",
+        "age": "22 ans",
+        "phone": "+212772817824",
+        "email": "soufianekhatib652@gmail.com",
+        "linkedin": "/sofiane-khatib",
+        "github": "https://github.com/SofianeKhatib"
+    },
+    "profile": {
+        "description": "Élève ingénieur en génie logiciel et intelligence artificielle, passionné par la programmation et les technologies de l'IA. Il construit des solutions logicielles robustes et innovantes.",
+        "goal": "Trouver un stage d'initiation en juillet 2026 pour développer ses compétences et contribuer à des projets.",
+        "status": "Étudiant ingénieur",
+        "availability": "Juillet 2026"
+    },
+    "languages": [
+        {
+            "name": "Arabe",
+            "level": "Natif"
+        },
+        {
+            "name": "Français",
+            "level": "Intermédiaire"
+        },
+        {
+            "name": "Anglais",
+            "level": "Intermédiaire"
+        }
+    ],
+    "skills": {
+        "programming_languages": [
+            "C",
+            "Python",
+            "JavaScript",
+            "PHP"
+        ],
+        "web_development": [
+            "HTML",
+            "CSS",
+            "React.js",
+            "Tailwind CSS"
+        ],
+        "databases": [
+            "MySQL",
+            "SQL Server"
+        ],
+        "data_analysis": [
+            "Python",
+            "Pandas"
+        ],
+        "tools": [
+            "VS Code",
+            "Git",
+            "GitHub",
+            "Cisco Packet Tracer"
+        ],
+        "concepts": [
+            "Programmation Orientée Objet",
+            "Structures de données",
+            "Algorithmes et analyse des complexités",
+            "Réseaux informatiques (Modèle OSI, TCP/IP, adressage IP)",
+            "Clean Architecture",
+            "Architecture MVC"
+        ]
+    },
+    "education": [
+        {
+            "period": "2025 – Présent",
+            "degree": "Cycle Ingénieur en Génie Logiciel et Intelligence Artificielle",
+            "institution": "Faculté des Sciences et Techniques — Errachidia"
+        },
+        {
+            "period": "2022 – 2025",
+            "degree": "DEUST",
+            "institution": "Faculté des Sciences et Techniques — Béni Mellal"
+        },
+        {
+            "period": "2021 – 2022",
+            "degree": "Baccalauréat Sciences Physiques et Chimie",
+            "institution": "Lycée Moulay Rachid, Kasba Tadla",
+            "option": "Français"
+        }
+    ],
+    "certifications": [
+        {
+            "title": "Data Analysis with Python",
+            "platform": "Udemy",
+            "year": 2026
+        }
+    ],
+    "projects": [
+        {
+            "name": "Application de Gestion de Bibliothèque",
+            "type": "Application Web",
+            "technologies": [
+                "React.js",
+                "Tailwind CSS",
+                "PHP"
+            ],
+            "features": [
+                "Recherche de livres",
+                "Filtrage",
+                "Ajout et suppression de livres",
+                "Inscription en ligne",
+                "Gestion du catalogue"
+            ],
+            "github": "https://github.com/sofianekhatib/AcademIQ"
+        },
+        {
+            "name": "SRH - Système de gestion des réservations hôtelières",
+            "type": "Application Web (API REST)",
+            "technologies": [
+                "React.js",
+                "Tailwind CSS",
+                "ASP.NET Core"
+            ],
+            "features": [
+                "Gestion des clients",
+                "Gestion des chambres",
+                "Gestion des réservations",
+                "Facturation",
+                "Authentification JWT"
+            ],
+            "architecture": [
+                "Clean Architecture",
+                "SOLID"
+            ],
+            "github": "https://github.com/sofianekhatib/Mini-project-SGRH-"
+        },
+        {
+            "name": "GYM Management System",
+            "type": "Application Desktop",
+            "technologies": [
+                "Python",
+                "Tkinter",
+                "JSON",
+                "POO",
+                "MVC"
+            ],
+            "features": [
+                "Gestion des membres",
+                "Gestion des abonnements",
+                "Gestion des paiements",
+                "Validation des données",
+                "Stockage des données en fichiers JSON",
+                "Architecture MVC"
+            ],
+            "github": "https://github.com/SofianeKhatib"
+        }
+    ],
+    "stats": {
+        "languages_count": "5+",
+        "projects_count": "3",
+        "internship_year": 2026
+    },
+    "faq": [
+        {
+            "question": "Qui est Sofiane Khatib ?",
+            "answer": "Sofiane Khatib est un élève ingénieur en génie logiciel et intelligence artificielle, passionné par la programmation."
+        },
+        {
+            "question": "Que recherche Sofiane Khatib ?",
+            "answer": "Il recherche un stage d'initiation en juillet 2026 pour appliquer ses compétences et contribuer à des projets réels."
+        },
+        {
+            "question": "Quel type de stage souhaite-t-il ?",
+            "answer": "Un stage d'initiation en développement logiciel ou IA, idéalement dans le développement web, la data ou les architectures logicielles."
+        },
+        {
+            "question": "Quelles sont ses compétences principales ?",
+            "answer": "Langages : C, Python, JavaScript, PHP. Web : React.js, Tailwind, HTML/CSS. Bases de données : MySQL, SQL Server. Data : Pandas. Concepts : POO, Clean Architecture, MVC, réseaux."
+        },
+        {
+            "question": "Quels projets a-t-il réalisés ?",
+            "answer": "Il a réalisé trois projets : une application de gestion de bibliothèque (React/PHP), un système de réservation hôtelière (React/ASP.NET Core) et un système de gestion de salle de sport (Python/Tkinter)."
+        },
+        {
+            "question": "Comment contacter Sofiane Khatib ?",
+            "answer": "Par email : soufianekhatib652@gmail.com, téléphone : +212772817824, ou via LinkedIn (/sofiane-khatib)."
+        },
+        {
+            "question": "Où étudie-t-il actuellement ?",
+            "answer": "À la Faculté des Sciences et Techniques d'Errachidia, en cycle ingénieur génie logiciel et IA."
+        },
+        {
+            "question": "Quelles langues parle-t-il ?",
+            "answer": "Arabe (natif), français (intermédiaire), anglais (intermédiaire)."
+        },
+        {
+            "question": "Quelle certification possède-t-il ?",
+            "answer": "Certification Data Analysis with Python (Udemy, 2026)."
+        },
+        {
+            "question": "A-t-il de l'expérience avec les API REST ?",
+            "answer": "Oui, il a développé une API REST avec ASP.NET Core dans le projet SRH, utilisant JWT pour l'authentification."
+        },
+        {
+            "question": "Quels outils de versionnement utilise-t-il ?",
+            "answer": "Git et GitHub."
+        },
+        {
+            "question": "Maîtrise-t-il la Clean Architecture ?",
+            "answer": "Oui, il l'applique dans ses projets, notamment le système de réservation hôtelière."
+        },
+        {
+            "question": "Quand est-il disponible pour un stage ?",
+            "answer": "Juillet 2026."
+        }
+    ],
+    "chatbot_rules": {
+        "strict_mode": true,
+        "instructions": [
+            "Répondre uniquement à partir des données fournies",
+            "Ne pas inventer d'informations",
+            "Refuser les questions hors contexte"
+        ],
+        "fallback_response": "Je peux uniquement répondre aux questions liées au portfolio de Sofiane Khatib.",
+        "restricted_topics": [
+            "politique",
+            "religion",
+            "opinions personnelles",
+            "sujets hors contexte"
+        ]
+    }
+}

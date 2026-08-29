@@ -1,0 +1,127 @@
+HotelManager.Domain
+│
+├── Entities
+│     Client.cs
+│     User.cs
+│     Chambre.cs
+│     Reservation.cs
+│     Facture.cs
+│     Paiement.cs
+│
+├── Interfaces
+│     IClientRepository.cs
+│     IUserRepository.cs
+│     IReservationRepository.cs
+│     IChambreRepository.cs
+│     IFactureRepository.cs
+│
+└── Enums
+      Role.cs
+      StatutReservation.cs
+      StatutChambre.cs
+
+Entités nécessaires
+
+Client
+
+Id
+Nom
+Prenom
+Email
+Telephone
+Adresse
+Password
+
+User (réceptionniste / admin)
+
+Id
+Username
+Password
+Role
+
+Chambre
+
+Id
+Numero
+Type
+Prix
+Statut
+
+Reservation
+
+Id
+ClientId
+ChambreId
+DateDebut
+DateFin
+Statut
+
+Facture
+
+Id
+ReservationId
+Montant
+DateFacture
+
+Paiement
+
+Id
+FactureId
+Montant
+DatePaiement
+ModePaiement
+
+
+
+HotelManager.Application
+│
+├── DTOs
+│     ClientDto.cs
+│     ReservationDto.cs
+│     LoginDto.cs
+│
+├── Interfaces
+│     IAuthService.cs
+│     IClientService.cs
+│     IReservationService.cs
+│     ICheckInService.cs
+│     ICheckOutService.cs
+│     IFactureService.cs
+│
+└── Services
+      AuthService.cs
+      ClientService.cs
+      ReservationService.cs
+      CheckInService.cs
+      CheckOutService.cs
+      FactureService.cs
+
+
+HotelManager.Infrastructure
+│
+├── Data
+│     AppDbContext.cs
+│
+├── Repositories
+│     ClientRepository.cs
+│     UserRepository.cs
+│     ReservationRepository.cs
+│     ChambreRepository.cs
+│     FactureRepository.cs
+│
+└── Services
+      JwtService.cs
+
+HotelManager.API
+│
+├── Controllers
+│     AuthController.cs
+│     ClientController.cs
+│     ReservationController.cs
+│     CheckInController.cs
+│     CheckOutController.cs
+│     FactureController.cs
+│     PaiementController.cs
+│
+├── Program.cs
+└── appsettings.json
